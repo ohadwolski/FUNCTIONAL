@@ -21,7 +21,7 @@ canWin(N) when N>2 ->
 
 nextMove(1) ->{true,1};
 nextMove(2) ->{true,2};
-nextMove(3)-> {false};
+nextMove(3)-> false;
 nextMove(N) ->
   canIWin=canWin(N),
   canEnemyWin1 = canWin(N-1),
