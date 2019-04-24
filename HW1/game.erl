@@ -16,13 +16,13 @@
 canWin(1)->true;
 canWin(2)->true;
 canWin(3)->false;
-canWin(N) when N>3 ->
+canWin(N) when N>3 and is_integer(N) ->
   (not canWin(N-1)) or (not canWin(N-2)).
 
 nextMove(1) ->{true,1};
 nextMove(2) ->{true,2};
-nextMove(3)-> false;
-nextMove(N) when N>3 ->
+nextMove(3)-> {false};
+nextMove(N) when N>3 and is_integer(N) ->
   canIWin=canWin(N),
   canEnemyWin1 = canWin(N-1),
   canEnemyWin2 = canWin(N-2),
@@ -32,7 +32,7 @@ nextMove(N) when N>3 ->
     not canEnemyWin2 -> {true,2}
   end.
 
-explanation() -> {""}.
+explanation() -> {"The answer depends on a manipulation on the result of a independent actions an thus it's harder to implement with tail recursion"}.
 
 
 
