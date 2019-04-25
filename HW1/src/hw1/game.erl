@@ -34,5 +34,3 @@ nextMove(N) when N>3 and is_integer(N) ->
 
 explanation() -> {"The answer depends on a manipulation on the result of a independent actions an thus it's harder to implement with tail recursion"}.
 
-
-
